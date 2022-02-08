@@ -16,7 +16,7 @@ get '/makers' do
 end
 
 get '/random-cat' do
-  @name = %w 'Amigo', 'Misty', 'Almond'.sample %w
+  @name = %w('Amigo', 'Misty', 'Almond').sample
   erb(:index)
 end
 
