@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
@@ -14,12 +16,12 @@ get '/makers' do
 end
 
 get '/random-cat' do
-  @name = ['Amigo', 'Misty', 'Almond'].sample
+  @name = %w 'Amigo', 'Misty', 'Almond'.sample %w
   erb(:index)
 end
 
 get '/named-cat' do
-  p @name = params[:name]
+  p params
+  @name = params[:name]
   erb(:index)
 end
-
